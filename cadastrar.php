@@ -16,10 +16,8 @@ if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){
     $vaga->ativo = $_POST['ativo'];
     $vaga->cadastrarVaga();
 
-
-    
-
-    echo "<pre>"; print_r($vaga); echo "</pre"; exit;
+    header('location: index.php?status=success');
+    exit;
     
 }
 

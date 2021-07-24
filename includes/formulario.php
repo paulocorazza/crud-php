@@ -37,7 +37,7 @@
 
 
     <div class="form-group">
-      <button type="submit" class="btn btn-success btn-block">Enviar</button>
+      <button type="submit" class="btn btn-success text-center">Enviar</button>
     </div>
 
   </form>
