@@ -14,7 +14,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h1 class="text-center">PHP Orienteado à objetos</h1>
+        <h1 class="text-center">PHP Orientado a objetos</h1>
       </div>
     </div>
    

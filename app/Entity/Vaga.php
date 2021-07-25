@@ -35,27 +35,37 @@ class Vaga
         ]);
 
        return true;
-
     }
+
     /** método para atualizar a vaga */
     public function atualizarVaga()
     {
-
+        return (new Database('vagas'))->update('id = '.$this->id,[
+                        'titulo'    => $this->titulo,
+                        'descricao' => $this->descricao,
+                        'ativo'     => $this->ativo,
+                        'data'      => $this->data
+                    ]);
     }
+
     /** método para excluir a vaga */
     public function excluirVaga()
     {
-       
+        return (new Database('vagas'))->delete('id = '.$this->id);
     }
+
     /** método que busca as vagas */
     public static  function getVagas($where = null, $order = null, $limit = null)
     {
         return (new Database('vagas'))->select($where,$order,$limit)
                                       ->fetchAll(PDO::FETCH_CLASS,self::class);
     }
-    /** método que busca a vaga */
-    public function getVaga()
-    {
 
+
+    /** método que busca a vaga */
+    public static function getVaga($id)
+    {
+        return (new Database('vagas'))->select('id = '. $id)
+                                      ->fetchObject(self::class);
     }
 }

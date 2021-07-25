@@ -53,7 +53,7 @@ class Database
         $fields = array_keys($values);
         $binds  = array_pad([],count($fields),'?');
 
-        //MONTA A QUERY
+        
         $query = 'INSERT INTO '.$this->table.' ('.implode(',',$fields).') VALUES ('.implode(',',$binds).')';
 
         $this->execute($query, array_values($values));
@@ -71,11 +71,31 @@ class Database
         $order = strlen($order) ? 'ORDER BY '.$order : '';
         $limit = strlen($limit) ? 'LIMIT '.$limit : '';
     
-        //MONTA A QUERY
         $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
     
-        //EXECUTA A QUERY
         return $this->execute($query);
+    }
+
+    public function update($where,$values)
+    {
+        
+        $fields = array_keys($values);
+    
+        $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields).'=? WHERE '.$where;
+    
+        $this->execute($query,array_values($values));
+    
+        return true;
+    }
+
+    public function delete($where)
+    {
+       
+        $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+
+        $this->execute($query);
+
+        return true;
     }
 
 } 

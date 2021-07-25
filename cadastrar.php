@@ -2,6 +2,8 @@
 
 require __DIR__.'/vendor/autoload.php';
 
+define('TITLE', 'Cadastrar Vaga');
+
 //chechando o que está vindo no post
 //echo "<pre>"; print_r($_POST); echo "</pre"; exit;
 
