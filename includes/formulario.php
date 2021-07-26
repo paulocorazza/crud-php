@@ -21,6 +21,11 @@
     </div>
 
     <div class="form-group">
+      <label>Salário</label>
+      <input type="text" class="form-control" name="salario" value="<?= $vaga->salario ?>" >
+    </div>
+
+    <div class="form-group">
       <label>Status</label>
 
       <div>
@@ -38,6 +43,8 @@
       </div>
 
     </div>
+
+
 
     <div class="form-group">
       <button type="submit" class="btn btn-success">Enviar</button>

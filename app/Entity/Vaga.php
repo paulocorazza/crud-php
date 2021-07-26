@@ -19,6 +19,9 @@ class Vaga
     /** status da vaga @var string(s/n) */
     public $ativo;
 
+    /** salario da vaga @var float  */
+    public $salario;
+
     /** data de publicacao @var string*/
     public $data;
 
@@ -31,7 +34,9 @@ class Vaga
         $this->id =  $banco->insert([
             'titulo' => $this->titulo,
             'descricao' => $this->descricao,
-            'ativo' => $this->ativo,
+            'salario' => $this->salario,
+            'ativo' => $this->ativo
+
         ]);
 
        return true;
@@ -43,6 +48,7 @@ class Vaga
         return (new Database('vagas'))->update('id = '.$this->id,[
                         'titulo'    => $this->titulo,
                         'descricao' => $this->descricao,
+                        'salario'   => $this->salario,
                         'ativo'     => $this->ativo,
                         'data'      => $this->data
                     ]);

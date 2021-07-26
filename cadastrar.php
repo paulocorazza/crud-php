@@ -10,11 +10,17 @@ define('TITLE', 'Cadastrar Vaga');
 //VALIDAÇÃO DO POST
 
 use App\Entity\Vaga;
+use App\Session\Login;
+
+//obriga o usuário a estar logado
+Login::requireLogin();
+
 
 if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){
     $vaga = new Vaga();
     $vaga->titulo = $_POST['titulo'];
     $vaga->descricao = $_POST['descricao'];
+    $vaga->salario = $_POST['salario'];
     $vaga->ativo = $_POST['ativo'];
     $vaga->cadastrarVaga();
 

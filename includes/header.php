@@ -12,9 +12,14 @@
   <body class="bg-dark text-light">
     <div class="container mt-4">
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12">
         <h1 class="text-center">PHP Orientado a objetos</h1>
       </div>
+    </div> -->
+
+    <div class="jumbotron bg-primary">
+        <h1 class="text-center">Sistema para cadastro de Vagas</h1>
+        <p class="text-center">Exemplo de CRUD com PHP orientados a objetos</p>
     </div>
    

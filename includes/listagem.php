@@ -5,7 +5,7 @@
     switch ($_GET['status']) {
       case 'success':
         $mensagem = '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>A acao foi concluida com sucesso!</strong> 
+        <strong>A ação foi concluída com sucesso!</strong> 
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -29,6 +29,7 @@
                       <td>'.$vaga->id.'</td>
                       <td>'.$vaga->titulo.'</td>
                       <td>'.$vaga->descricao.'</td>
+                      <td>'.$vaga->salario.'</td>
                       <td>'.($vaga->ativo == 's' ? '<span class="badge badge-pill badge-success">Ativo</span>' : '<span class="badge badge-pill badge-danger">Inativo</span>').'</td>
                       <td>'.date('d/m/Y à\s H:i:s',strtotime($vaga->data)).'</td>
                       <td>
@@ -67,6 +68,7 @@
             <th>ID</th>
             <th>Título</th>
             <th>Descrição</th>
+            <th>Salário</th>
             <th>Status</th>
             <th>Data</th>
             <th>Ações</th>

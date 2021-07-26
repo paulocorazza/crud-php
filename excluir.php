@@ -3,10 +3,16 @@
 require __DIR__.'/vendor/autoload.php';
 
 use \App\Entity\Vaga;
+use App\Session\Login;
+
+
+//obriga o usuário a estar logado
+Login::requireLogin();
+
 
 //VALIDAÇÃO DO ID
 if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
-  header('location: index.php?status=error');
+  header('location: vagas.php?status=error');
   exit;
 }
 
@@ -15,7 +21,7 @@ $vaga = Vaga::getVaga($_GET['id']);
 
 //VALIDAÇÃO DA VAGA
 if(!$vaga instanceof Vaga){
-  header('location: index.php?status=error');
+  header('location: vagas.php?status=error');
   exit;
 }
 
@@ -24,7 +30,7 @@ if(isset($_POST['excluir'])){
 
   $vaga->excluirVaga();
 
-  header('location: index.php?status=success');
+  header('location: vagas.php?status=success');
   exit;
 }
 
